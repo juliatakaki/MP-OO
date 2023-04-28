@@ -1,7 +1,6 @@
 package model.enums;
 
 public enum TipoPoltronaEnum {
-
     CAMA_LEITO("Cama Leito"),
     SEMI_LEITO("Semi Leito"),
     EXECUTIVA("Executiva"),

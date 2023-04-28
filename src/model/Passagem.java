@@ -56,7 +56,7 @@ public abstract class Passagem {
 
     public String getAssento() {
         try (Scanner ler = new Scanner(System.in)){
-        System.out.println("Digite o seento do passageiro: ");
+        System.out.println("Digite o assento do passageiro: ");
         assento = ler.next();
         return assento;
         }
