@@ -15,24 +15,27 @@ public class Itinerario {
     }
 
     public String getOrigem() {
-        Scanner ler = new Scanner(System.in);
+        try (Scanner ler = new Scanner(System.in)){
         System.out.println("Digite a origem da passagem: ");
         origem = ler.next();
         return this.origem;
+        }
     }
 
     public String getDestino() {
-        Scanner ler = new Scanner(System.in);
+        try (Scanner ler = new Scanner(System.in)){
         System.out.println("Digite o destino da passagem: ");
         destino = ler.next();
         return this.destino;
+        }
     }
 
     public String getData() {
-        Scanner ler = new Scanner(System.in);
+        try (Scanner ler = new Scanner(System.in)){
         System.out.println("Digite a data da passagem (ss/mm/aaaa): ");
         data = ler.next();
         return this.data;
+        }
     }
 
     public ArrayList<Passagem> getPassagens() {
@@ -44,6 +47,7 @@ public class Itinerario {
         System.out.println("Digite a origem a ser alterada: ");
         origem = ler.next();
         this.origem = origem;
+        ler.close();
     }
 
     public void setDestino(String destino) {
@@ -51,6 +55,7 @@ public class Itinerario {
         System.out.println("Digite o destino a ser alterado: ");
         destino = ler.next();
         this.destino = destino;
+        ler.close();
     }
 
 }

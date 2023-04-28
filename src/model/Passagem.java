@@ -7,17 +7,18 @@ public abstract class Passagem {
     private Itinerario itinerario;
     private String assento;
 
-/*    public Passagem(String nomePassageiro, String telefone, Intinerario intinerario, String asssento){
-        this.nomePassageiro = nomePassageiro;
+   public Passagem(){
+        /* this.nomePassageiro = nomePassageiro;
         this.telefone = telefone;
-        this.intinerario = intinerario;
-        this.asssento = asssento;
+        this.itinerario = itinerario;
+        this.assento = assento; */
     }
-*/
+
     public String getNomePassageiro() {
-        Scanner ler = new Scanner(System.in);
-        System.out.println("Digite o nome do passageiro: ");
-        nomePassageiro = ler.next();
+        try (Scanner ler = new Scanner(System.in)) {
+            System.out.println("Digite o nome do passageiro: ");
+            nomePassageiro = ler.next();
+        }
         return nomePassageiro;
     }
 
@@ -26,13 +27,15 @@ public abstract class Passagem {
         System.out.println("Digite o nome a ser alterado: ");
         nomePassageiro = ler.next();
         this.nomePassageiro = nomePassageiro;
+        ler.close();
     }
 
     public String getTelefone() {
-        Scanner ler = new Scanner(System.in);
+        try (Scanner ler = new Scanner(System.in)){
         System.out.println("Digite o telefone do passageiro: ");
         telefone = ler.next();
         return telefone;
+        }
     }
 
     public void setTelefone(String telefone) {
@@ -40,6 +43,7 @@ public abstract class Passagem {
         System.out.println("Digite o telefone a ser alterado: ");
         telefone = ler.next();
         this.telefone = telefone;
+        ler.close();
     }
 
     public Itinerario getItinerario() {
@@ -51,10 +55,11 @@ public abstract class Passagem {
     }
 
     public String getAssento() {
-        Scanner ler = new Scanner(System.in);
+        try (Scanner ler = new Scanner(System.in)){
         System.out.println("Digite o seento do passageiro: ");
         assento = ler.next();
         return assento;
+        }
     }
 
     public void setAssento(String assento) {
@@ -62,5 +67,6 @@ public abstract class Passagem {
         System.out.println("Digite o assento a ser alterado: ");
         assento = ler.next();
         this.assento = assento;
+        ler.close();
     }
 }
