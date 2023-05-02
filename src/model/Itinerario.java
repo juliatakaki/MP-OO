@@ -39,6 +39,17 @@ public class Itinerario {
     }
 
     public ArrayList<Passagem> getPassagens() {
+        for (Passagem passagem : passagens) {
+            System.out.println("Listagem dos dados da passagem: ");
+            System.out.println("Nome: ");
+            System.out.println(passagem.getNomePassageiro());
+            System.out.println("Telefone: ");
+            System.out.println(passagem.getTelefone());
+            System.out.println("Itinerario: ");
+            System.out.println(passagem.getItinerario());
+            System.out.println("Assento: ");
+            System.out.println(passagem.getAssento());
+        }
         return this.passagens;
     }
 
