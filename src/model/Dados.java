@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Dados {
     private static final ArrayList<Passagem> passagens = new ArrayList<Passagem>();
-    private static final ArrayList<Intinerario> intinerarios = new ArrayList<Intinerario>();
+    private static final ArrayList<Itinerario> itinerarios = new ArrayList<Itinerario>();
 
     private Dados() {
     }
@@ -13,7 +13,7 @@ public class Dados {
         return passagens;
     }
 
-    public static ArrayList<Intinerario> getIntinerarios() {
-        return intinerarios;
+    public static ArrayList<Itinerario> getItinerarios() {
+        return itinerarios;
     }
 }
