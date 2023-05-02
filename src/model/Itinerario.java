@@ -42,7 +42,7 @@ public class Itinerario {
             System.out.println("Nome: " + passagem.getNomePassageiro());
             System.out.println("Telefone: " + passagem.getTelefone());
             System.out.println("Itinerario: " + passagem.getItinerario());
-            System.out.println("Assento: " + passagem.getAssento());
+            System.out.println("Assento: " + passagem.getAssento());   
         }
         return passagens;
     }
