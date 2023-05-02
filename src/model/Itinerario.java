@@ -1,12 +1,14 @@
 package model;
-import java.util.Scanner;
+
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class Itinerario {
     private String origem;
     private String destino;
     private String data;
-    private ArrayList<Passagem> passagens = new ArrayList<Passagem>();
+    private List<Passagem> passagens = new ArrayList<>();
 
     public Itinerario(String origem, String destino, String data) {
         this.origem = origem;
@@ -15,58 +17,46 @@ public class Itinerario {
     }
 
     public String getOrigem() {
-        try (Scanner ler = new Scanner(System.in)){
-        System.out.println("Digite a origem da passagem: ");
-        origem = ler.next();
         return this.origem;
-        }
     }
 
     public String getDestino() {
-        try (Scanner ler = new Scanner(System.in)){
-        System.out.println("Digite o destino da passagem: ");
-        destino = ler.next();
-        return this.destino;
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Destino da passagem: ");
+            destino = scanner.next();
         }
+            return destino;
     }
 
     public String getData() {
-        try (Scanner ler = new Scanner(System.in)){
-        System.out.println("Digite a data da passagem (ss/mm/aaaa): ");
-        data = ler.next();
-        return this.data;
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Data da passagem (dd/mm/aaaa): ");
+            data = scanner.next();
         }
+            return data;
     }
 
-    public ArrayList<Passagem> getPassagens() {
+    public List<Passagem> getPassagens() {
+        System.out.println("Listagem dos dados das passagens:");
         for (Passagem passagem : passagens) {
-            System.out.println("Listagem dos dados da passagem: ");
-            System.out.println("Nome: ");
-            System.out.println(passagem.getNomePassageiro());
-            System.out.println("Telefone: ");
-            System.out.println(passagem.getTelefone());
-            System.out.println("Itinerario: ");
-            System.out.println(passagem.getItinerario());
-            System.out.println("Assento: ");
-            System.out.println(passagem.getAssento());
+            System.out.println("Nome: " + passagem.getNomePassageiro());
+            System.out.println("Telefone: " + passagem.getTelefone());
+            System.out.println("Itinerario: " + passagem.getItinerario());
+            System.out.println("Assento: " + passagem.getAssento());
         }
-        return this.passagens;
+        return passagens;
     }
 
-    public void setOrigem(String origem) {
-        Scanner ler = new Scanner(System.in);
-        System.out.println("Digite a origem a ser alterada: ");
-        origem = ler.next();
-        this.origem = origem;
-        ler.close();
+    public void setOrigem(String novaOrigem) {
+            this.origem = novaOrigem;
     }
 
-    public void setDestino(String destino) {
-        Scanner ler = new Scanner(System.in);
-        System.out.println("Digite o destino a ser alterado: ");
-        destino = ler.next();
-        this.destino = destino;
-        ler.close();
+    public void setDestino() {
+        try(Scanner scanner = new Scanner (System.in)){
+            System.out.print("Destino a ser alterado: ");
+            String novoDestino = scanner.next();
+            this.destino = novoDestino;      
+        }
     }
-
 }
+

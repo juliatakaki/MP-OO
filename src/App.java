@@ -7,12 +7,13 @@ public class App {
 
         System.out.printf("Origem original:" + Dados.getItinerarios().get(0).getOrigem() + "\n");
 
-        Dados.getItinerarios().get(0).setOrigem("Brasilia");
+        int posicaoItinerario = 0; // armazena a posição do itinerário na lista
+        Dados.getItinerarios().get(posicaoItinerario).setOrigem("Brasilia"); // utiliza a posição para alterar a origem
 
-        System.out.printf("Origem alterado:" + Dados.getItinerarios().get(0).getOrigem() + "\n");
+        System.out.printf("Origem alterada:" + Dados.getItinerarios().get(posicaoItinerario).getOrigem() + "\n");
 
-        System.out.printf("Tamanho antes remover:" + Dados.getItinerarios().size() + "\n");
-        Dados.getItinerarios().remove(0);
+        System.out.printf("Tamanho antes de remover:" + Dados.getItinerarios().size() + "\n");
+        Dados.getItinerarios().remove(posicaoItinerario);
         System.out.printf("Tamanho depois de remover:" + Dados.getItinerarios().size() + "\n");
 
     }
