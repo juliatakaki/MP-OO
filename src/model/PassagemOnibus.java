@@ -9,6 +9,9 @@ public class PassagemOnibus extends Passagem {
         this.tipoPoltrona = tipoPoltrona;
     }
 
+    public PassagemOnibus(String string, String string2, Itinerario itinerario, String string3, String string4) {
+    }
+
     public TipoPoltronaEnum getTipoPoltrona() {
         return tipoPoltrona;
     }

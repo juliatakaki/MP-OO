@@ -17,23 +17,30 @@ public class Itinerario {
     }
 
     public String getOrigem() {
-        return this.origem;
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("Origem da passagem: ");
+            origem = scanner.next();
+            scanner.nextLine(); // Limpeza de buffer
+        }
+        return origem;
     }
 
     public String getDestino() {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.print("Destino da passagem: ");
             destino = scanner.next();
+            scanner.nextLine(); // Limpeza de buffer
         }
-            return destino;
+        return destino;
     }
 
     public String getData() {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.print("Data da passagem (dd/mm/aaaa): ");
             data = scanner.next();
+            scanner.nextLine(); // Limpeza de buffer
         }
-            return data;
+        return data;
     }
 
     public List<Passagem> getPassagens() {
@@ -42,21 +49,21 @@ public class Itinerario {
             System.out.println("Nome: " + passagem.getNomePassageiro());
             System.out.println("Telefone: " + passagem.getTelefone());
             System.out.println("Itinerario: " + passagem.getItinerario());
-            System.out.println("Assento: " + passagem.getAssento());   
+            System.out.println("Assento: " + passagem.getAssento());
         }
         return passagens;
     }
 
     public void setOrigem(String novaOrigem) {
-            this.origem = novaOrigem;
+        this.origem = novaOrigem;
     }
 
     public void setDestino() {
-        try(Scanner scanner = new Scanner (System.in)){
+        try (Scanner scanner = new Scanner(System.in)) {
             System.out.print("Destino a ser alterado: ");
             String novoDestino = scanner.next();
-            this.destino = novoDestino;      
+            scanner.nextLine(); // Limpeza de buffer
+            this.destino = novoDestino;
         }
     }
 }
-
