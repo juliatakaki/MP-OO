@@ -24,19 +24,29 @@ public class App {
 
         Scanner scanner = new Scanner(System.in); // criar um objeto Scanner
 
-        // Imprimir os dados da passagem de avião
-        System.out.println("Passagem de Avião:");
-        System.out.println("Nome: " + passagemAviao.getNomePassageiro());
-        System.out.println("Telefone: " + passagemAviao.getTelefone());
-        System.out.println("Itinerario: " + passagemAviao.getItinerario());
-        System.out.println("Assento: " + passagemAviao.getAssento());
-
-        // Imprimir os dados da passagem de ônibus
-        System.out.println("Passagem de Ônibus:");
-        System.out.println("Nome: " + passagemOnibus.getNomePassageiro());
-        System.out.println("Telefone: " + passagemOnibus.getTelefone());
-        System.out.println("Itinerario: " + passagemOnibus.getItinerario());
-        System.out.println("Assento: " + passagemOnibus.getAssento());
+        System.out.println("Seja bem-vindo à tananan");
+        System.out.println("Você deseja viajar de avião ou de ônibus?");
+        System.out.println("Digite 1 para avião e 2 para ônibus");
+        int escolha;
+        escolha = scanner.nextInt();
+        while (escolha == 1 || escolha == 2) {
+            if (escolha ==  1) {
+                // Imprimir os dados da passagem de avião
+                System.out.println("Passagem de Avião:");
+                System.out.println("Nome: " + passagemAviao.getNomePassageiro());
+                System.out.println("Telefone: " + passagemAviao.getTelefone());
+                System.out.println("Itinerario: " + passagemAviao.getItinerario());
+                System.out.println("Assento: " + passagemAviao.getAssento());
+            }else if(escolha == 2){
+                // Imprimir os dados da passagem de ônibus
+                System.out.println("Passagem de Ônibus:");
+                System.out.println("Nome: " + passagemOnibus.getNomePassageiro());
+                System.out.println("Telefone: " + passagemOnibus.getTelefone());
+                System.out.println("Itinerario: " + passagemOnibus.getItinerario());
+                System.out.println("Assento: " + passagemOnibus.getAssento());
+            }else
+                System.out.println("Digite uma opção válida.");
+        }
 
         // Imprimir os dados do itinerário
         System.out.println("Dados do itinerário:");
